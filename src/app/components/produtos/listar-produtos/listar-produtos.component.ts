@@ -1,3 +1,5 @@
+import { IProduto } from './../../../model/IProduto.model';
+import { ProdutosService } from './../../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarProdutosComponent implements OnInit {
 
-  constructor() { }
+
+  listaProdutos: IProduto[] = [];
+
+  constructor(private ProdutosService: ProdutosService) {
+
+   }
+
 
   ngOnInit(): void {
+    this.carregarProdutos();
+
+  }
+
+  carregarProdutos(): void{
+    this.ProdutosService.buscarTodos().subscribe(retorno => {
+      this.listaProdutos = retorno;
+    });
   }
 
 }

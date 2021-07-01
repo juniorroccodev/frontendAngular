@@ -1,3 +1,4 @@
+import { IProduto } from './../../../model/IProduto.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastrar-produto.component.css']
 })
 export class CadastrarProdutoComponent implements OnInit {
+
+
 
   constructor() { }
 
